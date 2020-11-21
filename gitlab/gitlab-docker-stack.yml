@@ -22,7 +22,7 @@ services:
     environment:
       GITLAB_OMNIBUS_CONFIG: |
         external_url 'https://${GITLAB_DOMAIN}'
-        gitlab_rails['initial_root_password'] = ${INIT_ROOT_PASSWORD}
+        gitlab_rails['initial_root_password'] = "${INIT_ROOT_PASSWORD}"
     deploy:
       mode: replicated
       replicas: 1
