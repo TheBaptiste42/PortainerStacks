@@ -30,6 +30,11 @@
           "name": "GITLAB_DOMAIN",
           "label": "URL gitlab",
           "description": "URL finale pour reverse proxy"
+        },
+        {
+          "name": "INIT_ROOT_PASSWORD",
+          "label": "Password root initial",
+          "description": "mot de passe root initial"
         }
       ]
     },

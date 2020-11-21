@@ -20,10 +20,9 @@ services:
       - /docker_data/gitlab/logs:/var/log/gitlab
       - /docker_data/gitlab/config:/etc/gitlab
     environment:
-      GITLAB_OMNIBUS_CONFIG: "from_file('/omnibus_config.rb')"
-    configs:
-      - source: gitlab
-        target: /omnibus_config.rb
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'https://${GITLAB_DOMAIN}'
+        gitlab_rails['initial_root_password'] = ${INIT_ROOT_PASSWORD}
     deploy:
       mode: replicated
       replicas: 1
@@ -44,8 +43,6 @@ services:
     networks:
       - traefik-net
       - gitlab-net
-    secrets:
-      - gitlab_root_password
 
   gitlab-runner:
     image: gitlab/gitlab-runner:alpine
@@ -54,11 +51,3 @@ services:
     deploy:
       mode: replicated
       replicas: 1
-
-configs:
-  gitlab:
-    file: /docker_data/gitlab/host_config/gitlab.rb
-
-secrets:
-  gitlab_root_password:
-    file: /docker_data/gitlab/secrets/gitlab_root_password
