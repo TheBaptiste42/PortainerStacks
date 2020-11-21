@@ -25,6 +25,7 @@ services:
         gitlab_rails['initial_root_password'] = "${INIT_ROOT_PASSWORD}"
         gitlab_rails['gitlab_shell_ssh_port'] = 2222
         letsencrypt['enable'] = false
+        nginx['listen_port'] = 80
     deploy:
       mode: replicated
       replicas: 1
