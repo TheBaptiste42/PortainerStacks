@@ -18,46 +18,62 @@
       ]
     },
     {
-		"title": "Owncloud",
-		"type": 2,
-		"description": "Service Owncloud tout fait",
-		"logo": "https://i1.wp.com/n5net.com/wp-content/uploads/2016/09/owncloud-logo-mahbub24.com_.png",
-		"repository": {
-			"url": "https://github.com/TheBaptiste42/PortainerStacks",
-			"stackfile": "owncloud/owncloud-docker-stack.yml"
-		},
-		"env": [
-			{
-				"name": "OWNCLOUD_DOMAIN",
-				"label": "URL acces owncloud",
-				"description": "URL finale pour reverse proxy et config owncloud"
-			},
-			{
-				"name": "MARIADB_USERNAME",
-				"label": "Username pour mariadb",
-				"description": "Username pour mariadb"
-			},
-			{
-				"name": "MARIADB_PASSWORD",
-				"label": "Password pour mariadb",
-				"description": "Password pour mariadb"
-			},
-			{
-				"name": "ADMIN_USERNAME",
-				"label": "Username administrateur owncloud",
-				"description": "Username administrateur owncloud"
-			},
-			{
-				"name": "ADMIN_PASSWORD",
-				"label": "Password administrateur owncloud",
-				"description": "Password administrateur owncloud"
-			},
-			{
-				"name": "MARIADB_ROOTPASSWORD",
-				"label": "password root mariadb",
-				"description": "password root mariadb"
-			}
-		]
-	}
+      "title": "Gitlab",
+      "type": 2,
+      "description": "Gitlab",
+      "repository": {
+        "url": "https://github.com/TheBaptiste42/PortainerStacks",
+        "stackfile": "gitlab/gitlab-docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "GITLAB_DOMAIN",
+          "label": "URL gitlab",
+          "description": "URL finale pour reverse proxy"
+        }
+      ]
+    },
+    {
+      "title": "Owncloud",
+      "type": 2,
+      "description": "Service Owncloud tout fait",
+      "logo": "https://i1.wp.com/n5net.com/wp-content/uploads/2016/09/owncloud-logo-mahbub24.com_.png",
+      "repository": {
+        "url": "https://github.com/TheBaptiste42/PortainerStacks",
+        "stackfile": "owncloud/owncloud-docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "OWNCLOUD_DOMAIN",
+          "label": "URL acces owncloud",
+          "description": "URL finale pour reverse proxy et config owncloud"
+        },
+        {
+          "name": "MARIADB_USERNAME",
+          "label": "Username pour mariadb",
+          "description": "Username pour mariadb"
+        },
+        {
+          "name": "MARIADB_PASSWORD",
+          "label": "Password pour mariadb",
+          "description": "Password pour mariadb"
+        },
+        {
+          "name": "ADMIN_USERNAME",
+          "label": "Username administrateur owncloud",
+          "description": "Username administrateur owncloud"
+        },
+        {
+          "name": "ADMIN_PASSWORD",
+          "label": "Password administrateur owncloud",
+          "description": "Password administrateur owncloud"
+        },
+        {
+          "name": "MARIADB_ROOTPASSWORD",
+          "label": "password root mariadb",
+          "description": "password root mariadb"
+        }
+      ]
+    }
   ]
 }
