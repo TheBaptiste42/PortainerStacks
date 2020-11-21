@@ -26,6 +26,7 @@ services:
         gitlab_rails['gitlab_shell_ssh_port'] = 2222
         letsencrypt['enable'] = false
         nginx['listen_port'] = 80
+        nginx['listen_https'] = false
     deploy:
       mode: replicated
       replicas: 1
