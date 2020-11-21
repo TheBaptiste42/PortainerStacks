@@ -46,8 +46,8 @@ services:
         - "traefik.http.routers.gitlab.tls=true"
         - "traefik.tcp.routers.gitlab-ssh.rule=HostSNI(`${GITLAB_DOMAIN}`)"
         - "traefik.tcp.routers.gitlab-ssh.entrypoints=ssh"
-        - "traefik.tcp.routers.gitlab-ssh.service=gitlab"
-        - "traefik.tcp.services.gitlab-ssh-svc.loadbalancer.server.port=22"
+        - "traefik.tcp.routers.gitlab-ssh.service=gitlab-ssh"
+        - "traefik.tcp.services.gitlab-ssh.loadbalancer.server.port=22"
     networks:
       - traefik-net
       - gitlab-net
