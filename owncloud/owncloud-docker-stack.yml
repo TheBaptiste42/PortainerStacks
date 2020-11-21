@@ -57,7 +57,7 @@ services:
         constraints: [node.role == manager]
       restart_policy:
         condition: any
-        deplay: 5s
+        delay: 5s
         max_attempts: 3
         window: 120s
       labels:
@@ -97,7 +97,7 @@ services:
         constraints: [ node.role == manager ]
       restart_policy:
         condition: any
-        deplay: 5s
+        delay: 5s
         max_attempts: 3
         window: 120s
 
@@ -121,6 +121,6 @@ services:
         constraints: [ node.role == manager ]
       restart_policy:
         condition: any
-        deplay: 5s
+        delay: 5s
         max_attempts: 3
         window: 120s
