@@ -1,11 +1,11 @@
 version: '3.7'
 
 networks:
-  traefik-frontend:
-    name: traefik-frontend
+  traefik-net:
+    name: traefik-net
     external: true
-  mysql-network:
-    name: mysql-network
+  mysql-net:
+    name: mysql-net
     external: true
   owncloud-net:
     name: owncloud-net
@@ -48,7 +48,7 @@ services:
     volumes:
       - files:/mnt/data
     networks:
-      - traefik-frontend
+      - traefik-net
       - owncloud-net
     deploy:
       mode: replicated
@@ -88,7 +88,7 @@ services:
       - mysql:/var/lib/mysql
       - backup:/var/lib/backup
     networks:
-      - mysql-network
+      - mysql-net
       - owncloud-net
     deploy:
       mode: replicated
