@@ -5,6 +5,7 @@
       "title": "Whoami",
       "type": 2,
       "description": "Whoami de traefik",
+	  "logo": "https://i1.wp.com/n5net.com/wp-content/uploads/2016/09/owncloud-logo-mahbub24.com_.png",
       "repository": {
         "url": "https://github.com/TheBaptiste42/PortainerStacks",
         "stackfile": "whoami/whoami-docker-stack.yml"
