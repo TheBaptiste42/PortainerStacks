@@ -117,7 +117,7 @@ services:
         constraints: [node.role == manager]
       
   webmail-rainloop:
-    image: hardware/rainloop
+    image: registry.bvds.fr/hardware-rainloop:latest
     depends_on:
       - mailserver
     volumes:
