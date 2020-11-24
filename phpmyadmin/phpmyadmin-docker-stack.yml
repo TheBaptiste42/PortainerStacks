@@ -5,7 +5,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
-      PMA_ARBITRARY: true
+      - PMA_ARBITRARY=1
     networks:
       - traefik-net
       - mysql-net
