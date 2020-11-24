@@ -31,6 +31,7 @@ services:
         - "traefik.http.services.wordpress-${WORDPRESS_NAME}.loadbalancer.server.port=80"
         - "traefik.http.routers.wordpress-${WORDPRESS_NAME}.rule=Host(`${WORDPRESS_DOMAIN}`)"
         - "traefik.http.routers.wordpress-${WORDPRESS_NAME}.tls=true"
+        - 'traefik.http.routers.wordpress-${WORDPRESS_NAME}.tls.certresolver=myresolver'
 
   db:
     image: registry.bvds.fr/mysql:5.7
