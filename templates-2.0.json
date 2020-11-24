@@ -114,6 +114,38 @@
           "default": "mainsrv.bvds.fr"
         }
       ]
+    },
+    {
+      "title": "Wordpress",
+      "type": 2,
+      "description": "Stack wordpress + mysql",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/wordpress.png",
+      "repository": {
+        "url": "https://github.com/TheBaptiste42/PortainerStacks",
+        "stackfile": "wordpress/wordpress-docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "WORDPRESS_NAME",
+          "label": "WORDPRESS_NAME",
+          "description": "Nom de service du WP"
+        },
+        {
+          "name": "WORDPRESS_DOMAIN",
+          "label": "Domaine final wordpress",
+          "description": "URL finale traefik"
+        },
+        {
+          "name": "DB_USER",
+          "label": "User Database",
+          "description": "User Database"
+        },
+        {
+          "name": "DB_PASS",
+          "label": "User pass",
+          "description": "Pass user database"
+        }
+      ]
     }
   ]
 }
