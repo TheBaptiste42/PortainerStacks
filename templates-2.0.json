@@ -146,6 +146,22 @@
           "description": "Pass user database"
         }
       ]
+    },
+    {
+      "title": "Phpmyadmin",
+      "type": 2,
+      "description": "Stack pma",
+      "repository": {
+        "url": "https://github.com/TheBaptiste42/PortainerStacks",
+        "stackfile": "phpmyadmin/phpmyadmin-docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "PMA_DOMAIN",
+          "label": "Domaine final pma",
+          "description": "URL finale traefik"
+        }
+      ]
     }
   ]
 }
