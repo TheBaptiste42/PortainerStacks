@@ -57,9 +57,9 @@ services:
 
 volumes:
   wordpress-data:
-    driver: overlay
+    driver: local
   wordpress-db-data:
-    driver: overlay
+    driver: local
 
 networks:
   wordpress-net:
