@@ -27,11 +27,11 @@ services:
       - /docker_data/mail/docker-mailserver/config:/tmp/docker-mailserver
       - /docker_data/main/traefik/acme.json:/etc/letsencrypt/acme.json:ro
     environment:
-      - OVERRIDE_HOSTNAME="${HOSTNAME}.${MAIN_SLD}"
-      - OVERRIDE_DOMAINNAME="${HOSTNAME}.${MAIN_SLD}"
+      - OVERRIDE_HOSTNAME=${HOSTNAME_SLD}
+      - OVERRIDE_DOMAINNAME=${HOSTNAME_SLD}
       - DMS_DEBUG=0
       - ONE_DIR=1
-      - POSTMASTER_ADDRESS="postmaster@${MAIN_SLD}"
+      - POSTMASTER_ADDRESS=${POSTMASTER_ADDR}
       - PERMIT_DOCKER=network
       - NETWORK_INTERFACE=
       - TLS_LEVEL=
@@ -44,7 +44,7 @@ services:
       - POSTSCREEN_ACTION=enforce
       - SMTP_ONLY=
       - SSL_TYPE=letsencrypt
-      - SSL_DOMAIN="*.${MAIN_SLD}"
+      - SSL_DOMAIN=${SSL_MAIN_WILDCARD_SLD}
       - VIRUSMAILS_DELETE_DELAY=
       - ENABLE_POSTFIX_VIRTUAL_TRANSPORT=
       - POSTFIX_DAGENT=

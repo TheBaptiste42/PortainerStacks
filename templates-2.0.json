@@ -96,14 +96,22 @@
           "description": "URL finale pour reverse proxy et config webmail rainloop"
         },
         {
-          "name": "MAIN_SLD",
-          "label": "MAIN SLD",
-          "description": "SLD reverse proxy de l'host"
+          "name": "POSTMASTER_ADDR",
+          "label": "Postmaster SLD",
+          "description": "Adresse postmaster",
+          "default": "postmaster@bvds.fr"
         },
         {
-          "name": "HOSTNAME",
+          "name": "SSL_MAIN_WILDCARD_SLD",
+          "label": "Adresse Cert SSL",
+          "description": "Addresse Cert SSL",
+          "default": "*.bvds.fr"
+        },
+        {
+          "name": "HOSTNAME_SLD",
           "label": "HOSTNAME",
-          "description": "Hostname du serveur"
+          "description": "Hostname du serveur avec le SLD",
+          "default": "mainsrv.bvds.fr"
         }
       ]
     }
