@@ -84,41 +84,26 @@
       "title": "Mailserver + Rainloop",
       "type": 2,
       "description": "Stack serveur mail sur volumes avec webmail rainloop.",
-      "logo": "https://i1.wp.com/n5net.com/wp-content/uploads/2016/09/owncloud-logo-mahbub24.com_.png",
+      "logo": "https://developer.asustor.com/uploadIcons/0020_999_1565693404_RainLoop_256.png",
       "repository": {
         "url": "https://github.com/TheBaptiste42/PortainerStacks",
-        "stackfile": "owncloud/owncloud-docker-stack.yml"
+        "stackfile": "mail/mail-docker-stack.yml"
       },
       "env": [
         {
-          "name": "OWNCLOUD_DOMAIN",
-          "label": "URL acces owncloud",
-          "description": "URL finale pour reverse proxy et config owncloud"
+          "name": "WEBMAIL_DOMAIN",
+          "label": "URL acces webmail",
+          "description": "URL finale pour reverse proxy et config webmail rainloop"
         },
         {
-          "name": "MARIADB_USERNAME",
-          "label": "Username pour mariadb",
-          "description": "Username pour mariadb"
+          "name": "MAIN_SLD",
+          "label": "MAIN SLD",
+          "description": "SLD reverse proxy de l'host"
         },
         {
-          "name": "MARIADB_PASSWORD",
-          "label": "Password pour mariadb",
-          "description": "Password pour mariadb"
-        },
-        {
-          "name": "ADMIN_USERNAME",
-          "label": "Username administrateur owncloud",
-          "description": "Username administrateur owncloud"
-        },
-        {
-          "name": "ADMIN_PASSWORD",
-          "label": "Password administrateur owncloud",
-          "description": "Password administrateur owncloud"
-        },
-        {
-          "name": "MARIADB_ROOTPASSWORD",
-          "label": "password root mariadb",
-          "description": "password root mariadb"
+          "name": "HOSTNAME",
+          "label": "HOSTNAME",
+          "description": "Hostname du serveur"
         }
       ]
     }

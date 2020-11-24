@@ -116,14 +116,12 @@ services:
       placement:
         constraints: [node.role == manager]
       
-  webmail-rainloop-nginx:
-    image: registry.bvds.fr/rainloop:latest
+  webmail-rainloop:
+    image: hardware/rainloop
     depends_on:
-      - webmail-rainloop-phpfpm
       - mailserver
     volumes:
-      - webmail-rainloop-nginx-data:/usr/share/nginx/html/data
-      - webmail-rainloop-nginx-logs:/var/log/nginx
+      - webmail-rainloop-data:/rainloop/data
     networks:
       - traefik-net
       - internal
@@ -137,7 +135,7 @@ services:
         - "traefik.enable=true"
         - "traefik.http.routers.rainloop.entrypoints=websecure"
         - "traefik.http.routers.rainloop.service=webmail-rainloop-nginx"
-        - "traefik.http.services.webmail-rainloop-nginx.loadbalancer.server.port=8090"
+        - "traefik.http.services.webmail-rainloop-nginx.loadbalancer.server.port=8888"
         - "traefik.http.routers.rainloop.rule=Host(`${WEBMAIL_DOMAIN}`)"
         - "traefik.http.routers.rainloop.tls=true"
 
@@ -146,9 +144,7 @@ volumes:
     driver: local
   mailserver-maildata:
     driver: local
-  webmail-rainloop-nginx-logs:
-    driver: local
-  webmail-rainloop-nginx-data:
+  webmail-rainloop-data:
     driver: local
 
 networks:
