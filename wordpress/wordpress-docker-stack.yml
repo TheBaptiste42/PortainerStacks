@@ -11,6 +11,9 @@ services:
       WORDPRESS_DB_NAME: wordpress_database
     volumes:
       - wordpress-data:/var/www/html
+    networks:
+      - traefik-net
+      - wordpress-net
     deploy:
       mode: replicated
       replicas: 1
@@ -38,6 +41,9 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
       - wordpress-db-data:/var/lib/mysql
+    networks:
+      - wordpress-net
+      - mysql-net
     deploy:
       mode: replicated
       replicas: 1
@@ -62,3 +68,6 @@ networks:
   traefik-net:
     external: true
     name: traefik-net
+  mysql-net:
+    external: true
+    name: mysql-net
