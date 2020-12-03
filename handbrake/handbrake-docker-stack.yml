@@ -6,7 +6,7 @@ services:
     image: jlesage/handbrake
     volumes:
       - handbrake-config:/config:rw
-      - "$HOME:/storage:ro"
+      - "/docker_data/HandBrake/input:/storage:ro"
       - "/docker_data/HandBrake/watch:/watch:rw"
       - "/docker_data/HandBrake/output:/output:rw"
     networks:
