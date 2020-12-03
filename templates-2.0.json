@@ -162,6 +162,22 @@
           "description": "URL finale traefik"
         }
       ]
+    },
+    {
+      "title": "Handbrake",
+      "type": 2,
+      "description": "Stack handbrake",
+      "repository": {
+        "url": "https://github.com/TheBaptiste42/PortainerStacks",
+        "stackfile": "handbrake/handbrake-docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "DOMAIN",
+          "label": "Domaine final handbrake",
+          "description": "URL finale traefik"
+        }
+      ]
     }
   ]
 }
