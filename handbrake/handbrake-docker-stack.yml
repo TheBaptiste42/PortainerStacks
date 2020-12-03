@@ -7,8 +7,8 @@ services:
     volumes:
       - handbrake-config:/config:rw
       - "$HOME:/storage:ro"
-      - "$HOME/HandBrake/watch:/watch:rw"
-      - "$HOME/HandBrake/output:/output:rw"
+      - "/docker_data/HandBrake/watch:/watch:rw"
+      - "/docker_data/HandBrake/output:/output:rw"
     networks:
       - traefik-net
     deploy:
