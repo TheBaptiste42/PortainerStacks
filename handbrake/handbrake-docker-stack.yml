@@ -4,6 +4,9 @@ services:
 
   handbrake:
     image: jlesage/handbrake
+    environment:
+      - USER_ID=33
+      - KEEP_APP_RUNNING=1
     volumes:
       - handbrake-config:/config:rw
       - owncloud-files:/storage:ro
