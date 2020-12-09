@@ -6,7 +6,7 @@ services:
     image: jlesage/handbrake
     volumes:
       - handbrake-config:/config:rw
-      - "/docker_data/HandBrake/input:/storage:ro"
+      - owncloud-files:/storage:ro
       - "/docker_data/HandBrake/watch:/watch:rw"
       - "/docker_data/HandBrake/output:/output:rw"
     networks:
@@ -35,6 +35,8 @@ services:
 volumes:
   handbrake-config:
     driver: local
+  owncloud-files:
+    external: true
 
 networks:
   traefik-net:
