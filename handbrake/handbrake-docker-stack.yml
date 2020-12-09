@@ -38,8 +38,6 @@ services:
 volumes:
   handbrake-config:
     driver: local
-  owncloud_files:
-    external: true
 
 networks:
   traefik-net:
