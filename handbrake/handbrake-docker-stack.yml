@@ -38,7 +38,7 @@ services:
 volumes:
   handbrake-config:
     driver: local
-  owncloud-files:
+  owncloud_files:
     external: true
 
 networks:
