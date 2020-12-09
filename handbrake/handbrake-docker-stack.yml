@@ -9,9 +9,9 @@ services:
       - KEEP_APP_RUNNING=1
     volumes:
       - handbrake-config:/config:rw
-      - owncloud_files:/storage:ro
+      - "/docker_data/owncloud_data/files/handbrake/files/a_convertir:/storage:ro"
       - "/docker_data/HandBrake/watch:/watch:rw"
-      - "/docker_data/HandBrake/output:/output:rw"
+      - "/docker_data/owncloud_data/files/handbrake/files/output:/output:rw"
     networks:
       - traefik-net
     deploy:

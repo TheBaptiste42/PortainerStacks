@@ -12,8 +12,6 @@ networks:
     driver: overlay
 
 volumes:
-  files:
-    driver: local
   mysql:
     driver: local
   backup:
@@ -46,7 +44,7 @@ services:
       timeout: 10s
       retries: 5
     volumes:
-      - files:/mnt/data
+      - /docker_data/owncloud_data:/mnt/data
     networks:
       - traefik-net
       - owncloud-net
