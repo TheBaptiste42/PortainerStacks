@@ -10,7 +10,6 @@ services:
     volumes:
       - handbrake-config:/config:rw
       - "/docker_data/owncloud_data/files/handbrake/files/a_convertir:/storage:ro"
-      - "/docker_data/HandBrake/watch:/watch:rw"
       - "/docker_data/owncloud_data/files/handbrake/files/sortie_convertisseur_video:/output:rw"
     networks:
       - traefik-net
