@@ -178,6 +178,27 @@
           "description": "URL finale traefik"
         }
       ]
+    },
+    {
+      "title": "Redirection no www to www",
+      "type": 2,
+      "description": "Redirection vers www",
+      "repository": {
+        "url": "https://github.com/TheBaptiste42/PortainerStacks",
+        "stackfile": "redirector/redirection-nowww-to-www-docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "REDIRECTOR_NAME",
+          "label": "REDIRECTOR_NAME",
+          "description": "Nom unique du redirecteur"
+        },
+        {
+          "name": "DOMAIN_TO_REDIRECT",
+          "label": "DOMAIN_TO_REDIRECT",
+          "description": "Domaine a rediriger"
+        }
+      ]
     }
   ]
 }
