@@ -13,7 +13,7 @@ services:
       - wordpress-data:/var/www/html
     networks:
       - traefik-net
-      - wordpress-net
+      - wordpress-${WORDPRESS_NAME}-net
     deploy:
       mode: replicated
       replicas: 1
@@ -43,7 +43,7 @@ services:
     volumes:
       - wordpress-db-data:/var/lib/mysql
     networks:
-      - wordpress-net
+      - wordpress-${WORDPRESS_NAME}-net
       - mysql-net
     deploy:
       mode: replicated
@@ -63,7 +63,7 @@ volumes:
     driver: local
 
 networks:
-  wordpress-net:
+  wordpress-${WORDPRESS_NAME}-net:
     driver: overlay
     name: wordpress-net
   traefik-net:
