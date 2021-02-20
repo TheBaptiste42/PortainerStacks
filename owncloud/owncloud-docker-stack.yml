@@ -21,7 +21,7 @@ volumes:
 
 services:
   owncloud:
-    image: registry.bvds.fr/owncloud-server
+    image: owncloud/server:${OWNCLOUD_VERSION}
     restart: always
     depends_on:
       - db
