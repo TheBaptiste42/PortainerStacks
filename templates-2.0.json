@@ -199,6 +199,27 @@
           "description": "Domaine a rediriger"
         }
       ]
+    },
+    {
+      "title": "FoundryVTT",
+      "type": 2,
+      "description": "Stack handbrake",
+      "repository": {
+        "url": "https://github.com/TheBaptiste42/PortainerStacks",
+        "stackfile": "foundryvtt/foundryvtt-docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "FOUNDRYVTT_VERSION",
+          "label": "Version foundryvtt",
+          "description": "Version app"
+        },
+        {
+          "name": "FOUNDRYVTT_DOMAIN",
+          "label": "Port foundryvtt",
+          "description": "URL finale traefik"
+        }
+      ]
     }
   ]
 }

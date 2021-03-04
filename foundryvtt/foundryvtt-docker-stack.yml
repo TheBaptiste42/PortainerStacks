@@ -1,0 +1,35 @@
+version: "3.7"
+
+networks:
+  traefik-net:
+    external: true
+    name: traefik-net
+
+volumes:
+  foundryvtt:
+    driver: local
+
+services:
+  foundryvtt:
+    image: registry.bvds.fr/foundryvtt:${FOUNDRYVTT_VERSION}
+    volumes:
+      - foundryvtt:/app
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.role == manager]
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.foundryvtt.service=foundryvtt"
+        - "traefik.http.services.foundryvtt.loadbalancer.server.port=30000"
+        - "traefik.http.routers.foundryvtt.rule=Host(`${FOUNDRYVTT_DOMAIN}`)"
+        - "traefik.http.routers.foundryvtt.entrypoints=websecure"
+        - "traefik.http.routers.foundryvtt.tls=true"
+    networks:
+      - traefik-net
