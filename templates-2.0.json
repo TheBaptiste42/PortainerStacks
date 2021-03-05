@@ -216,7 +216,7 @@
         },
         {
           "name": "FOUNDRYVTT_DOMAIN",
-          "label": "Port foundryvtt",
+          "label": "URL foundryvtt",
           "description": "URL finale traefik"
         }
       ]

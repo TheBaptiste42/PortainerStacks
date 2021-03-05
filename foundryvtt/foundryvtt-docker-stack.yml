@@ -6,14 +6,17 @@ networks:
     name: traefik-net
 
 volumes:
-  foundryvtt:
+  foundryvtt-data:
+    driver: local
+  foundryvtt-core:
     driver: local
 
 services:
   foundryvtt:
     image: registry.bvds.fr/foundryvtt:${FOUNDRYVTT_VERSION}
     volumes:
-      - foundryvtt:/app
+      - foundryvtt-data:/app/foundrydata
+      - foundryvtt-core:/app/foundryvtt
     deploy:
       mode: replicated
       replicas: 1
