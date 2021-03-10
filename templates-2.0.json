@@ -215,7 +215,7 @@
           "description": "Version app"
         },
         {
-          "name": "FOUNDRYVTT_NAME",
+          "name": "FOUNDRYVTT_NM",
           "label": "nom instance foundryvtt",
           "description": "nom instance foundryvtt"
         },
