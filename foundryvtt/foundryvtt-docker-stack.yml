@@ -12,7 +12,7 @@ volumes:
     driver: local
 
 services:
-  foundryvtt:
+  foundryvtt-${FOUNDRYVTT_NAME}:
     image: registry.bvds.fr/foundryvtt:${FOUNDRYVTT_VERSION}
     volumes:
       - foundryvtt-data:/app/foundrydata
@@ -29,10 +29,10 @@ services:
         window: 120s
       labels:
         - "traefik.enable=true"
-        - "traefik.http.routers.foundryvtt.service=foundryvtt"
-        - "traefik.http.services.foundryvtt.loadbalancer.server.port=30000"
-        - "traefik.http.routers.foundryvtt.rule=Host(`${FOUNDRYVTT_DOMAIN}`)"
-        - "traefik.http.routers.foundryvtt.entrypoints=websecure"
-        - "traefik.http.routers.foundryvtt.tls=true"
+        - "traefik.http.routers.foundryvtt-${FOUNDRYVTT_NAME}.service=foundryvtt-${FOUNDRYVTT_NAME}"
+        - "traefik.http.services.foundryvtt-${FOUNDRYVTT_NAME}.loadbalancer.server.port=30000"
+        - "traefik.http.routers.foundryvtt-${FOUNDRYVTT_NAME}.rule=Host(`${FOUNDRYVTT_DOMAIN}`)"
+        - "traefik.http.routers.foundryvtt-${FOUNDRYVTT_NAME}.entrypoints=websecure"
+        - "traefik.http.routers.foundryvtt-${FOUNDRYVTT_NAME}.tls=true"
     networks:
       - traefik-net
