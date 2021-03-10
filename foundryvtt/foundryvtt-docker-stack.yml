@@ -12,7 +12,7 @@ volumes:
     driver: local
 
 services:
-  foundryvtt-${FOUNDRYVTT_NM}:
+  foundryvtt:
     image: registry.bvds.fr/foundryvtt:${FOUNDRYVTT_VERSION}
     volumes:
       - foundryvtt-data:/app/foundrydata
