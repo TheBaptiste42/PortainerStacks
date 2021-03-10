@@ -215,6 +215,11 @@
           "description": "Version app"
         },
         {
+          "name": "FOUNDRYVTT_NAME",
+          "label": "nom instance foundryvtt",
+          "description": "nom instance foundryvtt"
+        },
+        {
           "name": "FOUNDRYVTT_DOMAIN",
           "label": "URL foundryvtt",
           "description": "URL finale traefik"
